@@ -64,7 +64,7 @@ def Home():
             # In order to clear the mess created by the previous commands,
             # we define 'clear' command to clear up the screen from previous commands.
             if selected_option == 'clear':
-                subprocess.call('cls', shell=True)
+                subprocess.call('cls', shell=False)
                 Display_Menu()
                 continue
             else:

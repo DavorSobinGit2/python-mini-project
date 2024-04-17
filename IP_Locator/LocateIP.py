@@ -17,7 +17,7 @@ def locate_ip():
         command = "cls"
     else:
         command = "clear"
-    subprocess.call(command, shell=True)
+    subprocess.call(command, shell=False)
 
     # Banner of the tool.
     banner = pyfiglet.figlet_format("IP LOCATER")
@@ -73,7 +73,7 @@ def get_ip():
         command = "cls"
     else:
         command = "clear"
-    subprocess.call(command, shell=True)
+    subprocess.call(command, shell=False)
     
     # Banner of the tool.
     banner = pyfiglet.figlet_format("IP FINDER")
