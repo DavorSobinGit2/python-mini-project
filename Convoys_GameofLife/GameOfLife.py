@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 
 import curses
-import random
 import time
 import copy
+import secrets
 
 
 def GameOfLife(stdscr):
@@ -32,7 +32,7 @@ def GameOfLife(stdscr):
         grid = initialize()
         for i in range(rows):
             for j in range(cols):
-                if int(random.random() * 4) == 0:
+                if int(secrets.SystemRandom().random() * 4) == 0:
                     grid[i][j] = True
         return grid
 

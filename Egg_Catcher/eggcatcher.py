@@ -1,6 +1,6 @@
 from itertools import cycle
-from random import randrange
 from tkinter import Tk , Canvas , messagebox , font
+import secrets
 
 canvas_width = 800
 canvas_height = 400
@@ -38,7 +38,7 @@ lives_text = c.create_text(canvas_width-10,10,anchor='ne' , font=('Arial',18,'bo
 eggs = []
 
 def create_eggs():
-    x = randrange(10,740)
+    x = secrets.SystemRandom().randrange(10,740)
     y = 40
     new_egg = c.create_oval(x,y,x+egg_width,y+egg_height,fill=next(color_cycle),width=0)
     eggs.append(new_egg)

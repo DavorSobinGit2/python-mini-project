@@ -2,9 +2,9 @@ from time import sleep
 import os
 import pygame
 import sys
-import random
 import argparse
 import logging
+import secrets
 
 rgb_colors = {
 		"red": (255, 0, 0),
@@ -80,9 +80,9 @@ pong_log.addHandler(console_handler)
 pong_log.addHandler(file_handler)
 
 def get_random(limit: int):
-	num_rand = random.randint(-limit, limit)
+	num_rand = secrets.SystemRandom().randint(-limit, limit)
 	while num_rand == 0:
-		num_rand = random.randint(-limit, limit)
+		num_rand = secrets.SystemRandom().randint(-limit, limit)
 	return num_rand
 
 
