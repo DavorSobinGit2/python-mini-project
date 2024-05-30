@@ -6,6 +6,7 @@ import pyfiglet
 import json
 import os
 import re
+from security import safe_command
 
 
 def locate_ip():
@@ -87,5 +88,5 @@ def get_ip():
     else:
         command = f"nslookup {domain_name}"
     
-    subprocess.call(command) == 0
+    safe_command.run(subprocess.call, command) == 0
     input("\nPress any key to continue...")

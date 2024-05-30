@@ -1,10 +1,11 @@
 import subprocess
 import sys
+from security import safe_command
 
 def execute_shell_command(command):
     """Executes the provided unix shell command """
     try:
-        proc = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
+        proc = safe_command.run(subprocess.Popen, command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
         out, err = proc.communicate()
         return_code = proc.returncode
         if err:
