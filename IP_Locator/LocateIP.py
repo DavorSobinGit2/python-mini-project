@@ -1,11 +1,11 @@
 # Import necessary modules
 import subprocess
 import platform
-import requests
 import pyfiglet
 import json
 import os
 import re
+from security import safe_requests
 
 
 def locate_ip():
@@ -50,7 +50,7 @@ def locate_ip():
     
     # Send a request to the API
     url = f"http://ip-api.com/json/{IP_address}?fields={fields}"
-    response = requests.get(url)
+    response = safe_requests.get(url)
 
     # Write the extracted data to files
     with open(filename_json, 'w') as ip_data_file_json:

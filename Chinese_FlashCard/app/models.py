@@ -1,6 +1,6 @@
 import json
-import requests
 from bs4 import BeautifulSoup as bs
+from security import safe_requests
 
 
 
@@ -11,7 +11,7 @@ def extract_data(url=cfg['url']) -> str:
     """ make a get request on url
     return :: html document
     """
-    return requests.get(url).text
+    return safe_requests.get(url).text
 
 def transform_data():
     """ parse html document
