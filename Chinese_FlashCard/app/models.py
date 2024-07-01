@@ -11,7 +11,7 @@ def extract_data(url=cfg['url']) -> str:
     """ make a get request on url
     return :: html document
     """
-    return requests.get(url).text
+    return requests.get(url, timeout=60).text
 
 def transform_data():
     """ parse html document
