@@ -1,11 +1,11 @@
-from random import shuffle
 from app import MainApp
 from models import create_dictionary
+import secrets
 
 def main():
     dct = create_dictionary()
     keyslist = list(dct.keys())
-    shuffle(keyslist)
+    secrets.SystemRandom().shuffle(keyslist)
     app = MainApp(keyslist,dct)
     app.mainloop()
 
