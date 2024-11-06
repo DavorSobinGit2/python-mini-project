@@ -1,7 +1,7 @@
-import random
+import secrets
 
 def hangman():
-    word = random.choice(["tiger", "superman", "thor", "doraemon", "avenger", "water", "stream"])
+    word = secrets.choice(["tiger", "superman", "thor", "doraemon", "avenger", "water", "stream"])
     validletter = 'abcdefghijklmnopqrstuvwxyz'
     turns = 10
     guessmade = ''

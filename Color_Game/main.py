@@ -1,6 +1,6 @@
-import random
 import tkinter as tk
 from tkinter import messagebox
+import secrets
 
 colours = ['Red', 'Blue', 'Green', 'Yellow', 'Orange', 'Purple', 'Pink', 'Black', 'White']
 score = 0
@@ -17,7 +17,7 @@ def next_colour():
             score += 1
 
         e.delete(0, tk.END)
-        random.shuffle(colours)
+        secrets.SystemRandom().shuffle(colours)
         label.config(fg=colours[1], text=colours[0])
         score_label.config(text=f"Score: {score}")
 

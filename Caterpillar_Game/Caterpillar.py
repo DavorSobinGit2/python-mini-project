@@ -1,5 +1,5 @@
 import turtle as t
-import random as rd
+import secrets
 
 t.bgcolor('yellow')
 
@@ -55,8 +55,8 @@ def display_score(current_score):
 
 def place_leaf():
     leaf.hideturtle()
-    leaf.setx(rd.randint(-200,200))
-    leaf.sety(rd.randint(-200,200))
+    leaf.setx(secrets.SystemRandom().randint(-200,200))
+    leaf.sety(secrets.SystemRandom().randint(-200,200))
     leaf.showturtle()
 
 def start_game():

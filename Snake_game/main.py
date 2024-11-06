@@ -1,6 +1,6 @@
 import pygame
 import time
-import random
+import secrets
 
 pygame.init()  # Initialize pygame.
 
@@ -59,11 +59,9 @@ def gameLoop():
     snake_List = []
     Length_of_snake = 1
 
-    foodx = round(random.randrange(
-        0, display_width - snake_block) / 10.0) * 10.0
+    foodx = round(secrets.SystemRandom().randrange(0, display_width - snake_block) / 10.0) * 10.0
 
-    foody = round(random.randrange(
-        0, display_height - snake_block) / 10.0) * 10.0
+    foody = round(secrets.SystemRandom().randrange(0, display_height - snake_block) / 10.0) * 10.0
 
     while not game_over:
 
@@ -142,11 +140,9 @@ def gameLoop():
         pygame.display.update()
 
         if x1 == foodx and y1 == foody:
-            foodx = round(random.randrange(
-                0, display_width - snake_block) / 10.0) * 10.0
+            foodx = round(secrets.SystemRandom().randrange(0, display_width - snake_block) / 10.0) * 10.0
 
-            foody = round(random.randrange(
-                0, display_height - snake_block) / 10.0) * 10.0
+            foody = round(secrets.SystemRandom().randrange(0, display_height - snake_block) / 10.0) * 10.0
 
             Length_of_snake += 1
 

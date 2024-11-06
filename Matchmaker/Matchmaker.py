@@ -1,6 +1,6 @@
-import random
 import time
 from tkinter import Tk, Button, DISABLED
+import secrets
 
 def show_symbol(x,y):
     global first
@@ -35,7 +35,7 @@ symbols = [u'\u2702',u'\u2705',u'\u2708',u'\u2709',u'\u270A',u'\u270B',
            u'\u2702',u'\u2705',u'\u2708',u'\u2709',u'\u270A',u'\u270B',
            u'\u270C',u'\u270F',u'\u2712',u'\u2714',u'\u2716',u'\u2728']
 
-random.shuffle(symbols)
+secrets.SystemRandom().shuffle(symbols)
 
 
 for x in range(6):

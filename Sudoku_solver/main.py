@@ -1,4 +1,4 @@
-from random import sample
+import secrets
 
 
 def generate_board(num):
@@ -9,7 +9,7 @@ def generate_board(num):
         return (base * (r % base) + r // base + c) % side
 
     def shuffle(s):
-        return sample(s, len(s))
+        return secrets.SystemRandom().sample(s, len(s))
 
     # randomize rows, col, num
     rBase = range(base)
@@ -33,7 +33,7 @@ def generate_board(num):
         # given number of empty slots
         empties = 81 - num
     # looping a randomized board for the amount of empty mubers
-    for p in sample(range(squares), empties):
+    for p in secrets.SystemRandom().sample(range(squares), empties):
         # set nubers to 0 of the randomized board
         board_tmp[p // side][p % side] = 0
 
