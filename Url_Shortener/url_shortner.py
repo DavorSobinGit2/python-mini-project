@@ -10,7 +10,7 @@ headers = {
 
 data = {"long_url": UI}
 for i in range(3): 
-    result = requests.post("https://api-ssl.bitly.com/v4/shorten", headers=headers, data=json.dumps(data))
+    result = requests.post("https://api-ssl.bitly.com/v4/shorten", headers=headers, data=json.dumps(data), timeout=60)
     if result.status_code == 200:
         break
 if result.status_code == 200:
