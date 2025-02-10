@@ -1,9 +1,9 @@
 from tkinter import *
-import random
+import secrets
 
 
 def roll():
-    r = random.randint(1, 6)
+    r = secrets.SystemRandom().randint(1, 6)
     s = str(r)
     e.delete(0, END)
     e.insert(0, s)

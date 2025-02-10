@@ -1,5 +1,5 @@
-import random
 import operator
+import secrets
 
 def errorHandle(problem_answer):
     switch = False
@@ -22,9 +22,9 @@ def random_problem():
     '/': operator.truediv,
     }
 
-    num_1 = random.randint(1, 10)
-    num_2 = random.randint(1, 10)
-    operation = random.choice(list(operators.keys()))
+    num_1 = secrets.SystemRandom().randint(1, 10)
+    num_2 = secrets.SystemRandom().randint(1, 10)
+    operation = secrets.choice(list(operators.keys()))
     answer = float(round(operators.get(operation)(num_1, num_2),3))
     print(f'What is {num_1} {operation} {num_2}')
     return answer

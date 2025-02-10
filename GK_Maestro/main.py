@@ -5,8 +5,8 @@ You just need to answer the 10 questions correctly to become the winner!
 
 from question_bank import easy_question, hard_question
 from answer_bank import answer
-from random import randint, choice
 from art import *
+import secrets
 
 # Main functionality
 def main():
@@ -59,17 +59,17 @@ def generate_question():
     hard_qlist = [1, 5, 6, 7, 10, 11, 12, 13]
 
     # Choose a random value - 1 or 2
-    difficulty = randint(1, 2)
+    difficulty = secrets.SystemRandom().randint(1, 2)
 
     # Difficulty level: easy
     if difficulty == 1:
         # Select a random question from the choices
-        random_choice = choice(easy_qlist)
+        random_choice = secrets.choice(easy_qlist)
         ques = easy_question(random_choice)
     # Difficulty level: hard
     elif difficulty == 2:
         # Select a random question from the choices
-        random_choice = choice(hard_qlist)
+        random_choice = secrets.choice(hard_qlist)
         ques = hard_question(random_choice)
     
     # Return question number and the question

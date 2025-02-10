@@ -1,5 +1,5 @@
-import random
 import time
+import secrets
 
 guess = None
 upper_boundary = None
@@ -9,7 +9,7 @@ try:
     print('Hello! Welcome to the Number Guessing game')
     time.sleep(1)
     upper_boundary = int(input('Enter an upper boundary: '))
-    answer = random.randint(1, upper_boundary)
+    answer = secrets.SystemRandom().randint(1, upper_boundary)
     time.sleep(1)
     guess = int(input('Guess the answer by enter a number between {0} and {1}: '.format(lower_boundary,upper_boundary)))
 

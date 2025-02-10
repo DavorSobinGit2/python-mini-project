@@ -1,4 +1,4 @@
-import random
+import secrets
 
 score = 0
 
@@ -38,9 +38,9 @@ print("""(1) your dog
 answer = input(">")
 
 if answer == "1":
-  score += random.randint(10,20)
+  score += secrets.SystemRandom().randint(10,20)
 if answer == "2":
-  score += random.randint(5,10)
+  score += secrets.SystemRandom().randint(5,10)
 else:
   score += 3
   
@@ -55,9 +55,9 @@ print("""(1) keep moving around
 answer = input(">")
 
 if answer == "2":
-  score += random.randint(10,20)
+  score += secrets.SystemRandom().randint(10,20)
 if answer == "4":
-  score += random.randint(5,10)
+  score += secrets.SystemRandom().randint(5,10)
 else:
   score += 3
 
@@ -72,9 +72,9 @@ print("""(1) kill zombies to make a path
 answer = input(">")
 
 if answer == "2":
-  score += random.randint(10,20)
+  score += secrets.SystemRandom().randint(10,20)
 if answer == "1":
-  score += random.randint(5,10)
+  score += secrets.SystemRandom().randint(5,10)
 else:
   score += 3
 
@@ -89,9 +89,9 @@ print("""(1) watch them for a while
 answer = input(">")
 
 if answer == "1":
-  score += random.randint(10,20)
+  score += secrets.SystemRandom().randint(10,20)
 if answer == "3":
-  score += random.randint(5,10)
+  score += secrets.SystemRandom().randint(5,10)
 else:
   score += 3
   
@@ -106,9 +106,9 @@ print("""(1) get in the container
 answer = input(">")
 
 if answer == "1":
-  score += random.randint(10,20)
+  score += secrets.SystemRandom().randint(10,20)
 if answer == "4":
-  score += random.randint(5,10)
+  score += secrets.SystemRandom().randint(5,10)
 else:
   score += 3
   
@@ -123,9 +123,9 @@ print("""(1) share it
 answer = input(">")
 
 if answer == "2":
-  score += random.randint(10,20)
+  score += secrets.SystemRandom().randint(10,20)
 if answer == "1":
-  score += random.randint(5,10)
+  score += secrets.SystemRandom().randint(5,10)
 else:
   score += 3
   
@@ -140,9 +140,9 @@ print("""(1) katana
 answer = input(">")
 
 if answer == "2":
-  score += random.randint(10,20)
+  score += secrets.SystemRandom().randint(10,20)
 if answer == "3":
-  score += random.randint(5,10)
+  score += secrets.SystemRandom().randint(5,10)
 else:
   score += 3
 
@@ -157,9 +157,9 @@ print("""(1) trail mix
 answer = input(">")
 
 if answer == "3":
-  score += random.randint(10,20)
+  score += secrets.SystemRandom().randint(10,20)
 if answer == "4":
-  score += random.randint(5,10)
+  score += secrets.SystemRandom().randint(5,10)
 else:
   score += 3  
 
@@ -174,9 +174,9 @@ print("""(1) next to the river
 answer = input(">")
 
 if answer == "1":
-  score += random.randint(10,20)
+  score += secrets.SystemRandom().randint(10,20)
 if answer == "2":
-  score += random.randint(5,10)
+  score += secrets.SystemRandom().randint(5,10)
 else:
   score += 3  
 
@@ -191,9 +191,9 @@ print("""(1) follow your friends
 answer = input(">")
 
 if answer == "3":
-  score += random.randint(10,20)
+  score += secrets.SystemRandom().randint(10,20)
 if answer == "4":
-  score += random.randint(5,10)
+  score += secrets.SystemRandom().randint(5,10)
 else:
   score += 3  
 

@@ -1,6 +1,7 @@
 #cheat : high chance Win Strategy =>   1 - 8 - 6 - 5 - 4
 #new version
 import os
+import secrets
 
 #initialize 
 board = [' ' for x in range(10)]
@@ -93,9 +94,8 @@ def computerMove():
         return move
 
 def selectRandom(li):
-    import random
     ln = len(li)
-    r = random.randrange(0, ln)
+    r = secrets.SystemRandom().randrange(0, ln)
     return li[r]
 
 def StartTheGame():
