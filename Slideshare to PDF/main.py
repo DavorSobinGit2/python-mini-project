@@ -2,12 +2,10 @@
 import io
 from tkinter import *
 import pathlib
-
-# External Modules
-import requests
 from bs4 import BeautifulSoup
 import PIL.Image
 import validators
+from security import safe_requests
 
 # Get Current Working Directory path
 path = pathlib.Path().resolve()
@@ -18,7 +16,7 @@ def get_pdf():
 
     # Only perform scraping if the url is valid.
     if validators.url(URL):
-        r = requests.get(URL)
+        r = safe_requests.get(URL)
         soup = BeautifulSoup(r.content, "html5lib")
         imgs = soup.find_all("img", class_="slide-image")
 
@@ -37,7 +35,7 @@ def get_pdf():
         for index, link in enumerate(imgSRC):
             try:
                 # Get image content from the image url
-                im = requests.get(link)
+                im = safe_requests.get(link)
 
                 # Convert that image content to a BytesIO file object which is in-memory object,
                 # so we don't have to download the image.
