@@ -50,7 +50,7 @@ def locate_ip():
     
     # Send a request to the API
     url = f"http://ip-api.com/json/{IP_address}?fields={fields}"
-    response = requests.get(url)
+    response = requests.get(url, timeout=60)
 
     # Write the extracted data to files
     with open(filename_json, 'w') as ip_data_file_json:

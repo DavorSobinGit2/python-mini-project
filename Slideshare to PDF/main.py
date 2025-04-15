@@ -18,7 +18,7 @@ def get_pdf():
 
     # Only perform scraping if the url is valid.
     if validators.url(URL):
-        r = requests.get(URL)
+        r = requests.get(URL, timeout=60)
         soup = BeautifulSoup(r.content, "html5lib")
         imgs = soup.find_all("img", class_="slide-image")
 
@@ -37,7 +37,7 @@ def get_pdf():
         for index, link in enumerate(imgSRC):
             try:
                 # Get image content from the image url
-                im = requests.get(link)
+                im = requests.get(link, timeout=60)
 
                 # Convert that image content to a BytesIO file object which is in-memory object,
                 # so we don't have to download the image.
