@@ -1,4 +1,4 @@
-import random
+import secrets
 
 # WINNING PATTERNS
 # Scissors cuts Paper, Paper covers Rock, Rock crushes Lizard,
@@ -29,7 +29,7 @@ while count != 6:
     # INPUT FOR PLAYER'S CHOICE
     player = input("What is your move? ")
     # COMPUTRON RANDOMLY SELECT CHOICE FROM CHOICES LIST
-    computer = random.choice(choices)
+    computer = secrets.choice(choices)
     # UNCOMMENT THE LINE BELOW IF YOU WISH TO SEE COMPUTRONS' CHOICE
     #print(computer)
 
