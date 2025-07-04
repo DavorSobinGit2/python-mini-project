@@ -1,10 +1,10 @@
-import requests
 from bs4 import BeautifulSoup
 import pandas as pd
+from security import safe_requests
 
 # a function for scraping content from url
 def scrape_url(url):
-  response = requests.get(url)
+  response = safe_requests.get(url)
   response = response.content
   soup = BeautifulSoup(response, 'html.parser')
   return soup
@@ -18,7 +18,7 @@ print(scrape_url(url))
 data1 = []
 for i in range(1,51):
   url = f'https://books.toscrape.com/catalogue/page-{i}.html'
-  response = requests.get(url)
+  response = safe_requests.get(url)
   response = response.content
   soup = BeautifulSoup(response, 'html.parser')
   ol = soup.find('ol')
