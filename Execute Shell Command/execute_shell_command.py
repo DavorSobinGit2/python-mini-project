@@ -4,7 +4,7 @@ import sys
 def execute_shell_command(command):
     """Executes the provided unix shell command """
     try:
-        proc = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
+        proc = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=False)
         out, err = proc.communicate()
         return_code = proc.returncode
         if err:
